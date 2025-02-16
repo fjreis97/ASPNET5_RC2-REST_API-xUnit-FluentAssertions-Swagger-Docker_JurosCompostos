@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: apifinancas 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apifinancas
+  template:
+    metadata:
+      labels:
+        app: apifinancas 
+    spec:
+      containers:
+        - name: apifinancas 
+          image: meurprimeirocontainer.azurecr.io/apifinancas
+          ports:
+          - containerPort: 80
